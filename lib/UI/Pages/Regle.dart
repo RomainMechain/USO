@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tp_mobile/UI/mytheme.dart';
+import 'home.dart';
 
 class Regle extends StatefulWidget {
   @override
@@ -131,6 +132,15 @@ class _RegleState extends State<Regle> {
                   textAlign: TextAlign.justify,
                 ),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
+                child: const Text('Retour à la page d accueil'),
+              )
             ],
           ),
         ),

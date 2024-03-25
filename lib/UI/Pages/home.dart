@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Regle.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 100,
         title: Center(
           child: Text("USO!",
@@ -49,7 +51,10 @@ class _HomeState extends State<Home> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Action à effectuer lorsque le bouton est pressé
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Regle()),
+                );
               },
               child: Text('Consulter les règles'),
             ),
