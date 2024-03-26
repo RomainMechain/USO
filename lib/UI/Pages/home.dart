@@ -29,24 +29,29 @@ class _HomeState extends State<Home> {
           children: [
             Image.asset(
               'Images/LeLogo.png',
-              width: 150,
-              height: 150,
+              width: 300,
+              height: 300,
             ),
             SizedBox(height: 20),
-            Text("Choisissez ce que vous voulez faire :"),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Action à effectuer lorsque le bouton est pressé
               },
-              child: Text('Jouer !'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+              ),
+              child: Text('Jouer !', style: TextStyle(fontSize: 18),),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Action à effectuer lorsque le bouton est pressé
               },
-              child: Text('Voir le score'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+              ),
+              child: Text('Voir le score', style: TextStyle(fontSize: 18),),
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -56,7 +61,10 @@ class _HomeState extends State<Home> {
                   MaterialPageRoute(builder: (context) => Regle()),
                 );
               },
-              child: Text('Consulter les règles'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+              ),
+              child: Text('Consulter les règles', style: TextStyle(fontSize: 18),),
             ),
           ],
         ),
