@@ -132,14 +132,18 @@ class _RegleState extends State<Regle> {
                   textAlign: TextAlign.justify,
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home()),
-                  );
-                },
-                child: const Text('Retour à la page d accueil'),
+              Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  child: const Text('Retour à la page d accueil'),
+                ),
               )
             ],
           ),
