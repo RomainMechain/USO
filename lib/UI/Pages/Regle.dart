@@ -17,7 +17,9 @@ class _RegleState extends State<Regle> {
         appBar: AppBar(
           toolbarHeight: 100,
           title: const Padding(
-            padding: EdgeInsets.only(top: 50), // Ajustez cette valeur pour changer la position du titre
+            padding: EdgeInsets.only(
+                top:
+                    50), // Ajustez cette valeur pour changer la position du titre
             child: Text(
               "USO",
               style: TextStyle(
@@ -36,7 +38,8 @@ class _RegleState extends State<Regle> {
             children: <Widget>[
               Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 20.0),
                 child: const Text(
                   "Règles du jeu USO",
                   style: TextStyle(
@@ -61,7 +64,8 @@ class _RegleState extends State<Regle> {
               const SizedBox(height: 10),
               Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
                 child: const Text(
                   "Voici quelques éléments clés des règles du jeu :",
                   style: TextStyle(

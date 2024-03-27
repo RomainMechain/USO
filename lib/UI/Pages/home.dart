@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Regle.dart';
+import 'connexion.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -36,7 +37,10 @@ class _HomeState extends State<Home> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Action à effectuer lorsque le bouton est pressé
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Connexion()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
