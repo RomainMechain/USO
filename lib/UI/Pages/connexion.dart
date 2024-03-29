@@ -8,6 +8,8 @@ class Connexion extends StatefulWidget {
 }
 
 class _ConnexionState extends State<Connexion> {
+  final NameTextController = TextEditingController();
+
   @override
   Widget build(BuildContext) {
     return Scaffold(
@@ -38,7 +40,8 @@ class _ConnexionState extends State<Connexion> {
               ConstrainedBox(
                 constraints:
                     const BoxConstraints(maxWidth: 300, maxHeight: 100),
-                child: const TextField(
+                child: TextField(
+                  controller: NameTextController,
                   style: TextStyle(fontSize: 40),
                   decoration: InputDecoration(
                     hintText: 'Nom',
@@ -51,7 +54,7 @@ class _ConnexionState extends State<Connexion> {
                 onPressed: () {
                   // ajoute le nom dans la base de données
                   DatabaseHelper.instance.insert({
-                    "nom": "nom",
+                    "nom": NameTextController.text,
                     "score": 0,
                     "niveau": "facile"
                   });
