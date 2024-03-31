@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../Database/database.dart';
+import 'Cercle.dart';
 
 class Connexion extends StatefulWidget {
   @override
@@ -61,6 +62,10 @@ class _ConnexionState extends State<Connexion> {
                   // print toute les entrées de la base de données
                   DatabaseHelper.instance.queryAllRows().then((value) {
                     print(value);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PageCercle()),
+                    );
                   });
                 },
                 style: ElevatedButton.styleFrom(
