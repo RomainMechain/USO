@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tp_mobile/UI/Pages/score.dart';
 import 'Regle.dart';
 import 'connexion.dart';
 
@@ -50,7 +51,10 @@ class _HomeState extends State<Home> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Action à effectuer lorsque le bouton est pressé
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => score()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
