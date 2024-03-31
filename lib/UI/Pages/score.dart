@@ -15,6 +15,7 @@ class _scoreState extends State<score> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 100,
         title: const Center(
           child: Text(

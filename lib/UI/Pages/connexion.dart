@@ -40,7 +40,7 @@ class _ConnexionState extends State<Connexion> {
               const SizedBox(height: 80),
               ConstrainedBox(
                 constraints:
-                    const BoxConstraints(maxWidth: 300, maxHeight: 100),
+                const BoxConstraints(maxWidth: 300, maxHeight: 100),
                 child: TextField(
                   controller: NameTextController,
                   style: TextStyle(fontSize: 40),
@@ -54,23 +54,22 @@ class _ConnexionState extends State<Connexion> {
               ElevatedButton(
                 onPressed: () {
                   // ajoute le nom dans la base de données
-                  DatabaseHelper.instance.insert({
-                    "nom": NameTextController.text,
-                    "score": 0,
-                    "niveau": "facile"
-                  });
                   // print toute les entrées de la base de données
+                  //DatabaseHelper.instance.insert({
+                    //"nom": NameTextController.text,
+                    //"score": 0,
+                    //"niveau": "0"
+                  //});
                   DatabaseHelper.instance.queryAllRows().then((value) {
                     print(value);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PageCercle()),
-                    );
+                        MaterialPageRoute(builder: (context) => PageCercle(name: NameTextController.text))                    );
                   });
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+                  const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
                 ),
                 child: const Text(
                   'Lancer la partie',

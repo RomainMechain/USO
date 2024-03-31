@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:math';
-
+import '../Database/database.dart';
 import 'package:flutter/material.dart';
 import 'score.dart';
 
 
 
 class PageCercle extends StatelessWidget {
+  late final String name ;
+  PageCercle({required this.name});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +17,7 @@ class PageCercle extends StatelessWidget {
           title: Text('Uso'),
         ),
         body: Center(
-          child: CercleWidget(),
+          child: CercleWidget(name: name),
         ),
       ),
     );
@@ -23,15 +25,19 @@ class PageCercle extends StatelessWidget {
 }
 
 class CercleWidget extends StatefulWidget {
+  final String name;
+  CercleWidget({required this.name});
   @override
   _CercleWidgetState createState() => _CercleWidgetState();
 }
 
 class _CercleWidgetState extends State<CercleWidget> {
+
   final random = Random();
   Offset _circlePosition = Offset(10, 10);
   late int randomisation;
   late Timer _timer;
+  late  int niveau=0;
   int _start = 30; // Réduit le temps pour tester plus rapidement
   bool _gameStarted = false;
   int _score = 0;
@@ -55,7 +61,7 @@ class _CercleWidgetState extends State<CercleWidget> {
           setState(() {
             timer.cancel();});
           if (_score >= _scoreAAtteindre) {
-
+            niveau++;
             _scorefinal += _score;
             _WinGameOverDialog();
             _start = 30;
@@ -148,6 +154,11 @@ class _CercleWidgetState extends State<CercleWidget> {
               onPressed: () {
                 // arrete le jeu et retourne à la page des regles
                 _timer.cancel();
+                DatabaseHelper.instance.insert({
+                  "nom": widget.name,
+                  "score": _scorefinal,
+                  "niveau": niveau.toString()
+                });
                 Navigator.of(context).pop(); // Ferme le dialog
                 Navigator.push(
                   context,
@@ -185,6 +196,7 @@ class _CercleWidgetState extends State<CercleWidget> {
           actions: [
             TextButton(
               onPressed: () {
+
                 Navigator.of(context).pop(); // Ferme le dialog
               },
               child: const Text(
