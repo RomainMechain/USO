@@ -60,7 +60,7 @@ class _scoreState extends State<score> {
                         ])).toList(),
                       );
                     } else {
-                      return CircularProgressIndicator();
+                      return const CircularProgressIndicator();
                     }
                   },
                 ),
@@ -75,9 +75,9 @@ class _scoreState extends State<score> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
               ),
-              child: Text('Retour', style: TextStyle(fontSize: 18),),
+              child: const Text('Retour', style: TextStyle(fontSize: 18),),
             ),
           ],
         ),

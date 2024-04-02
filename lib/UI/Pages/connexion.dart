@@ -44,8 +44,8 @@ class _ConnexionState extends State<Connexion> {
                 const BoxConstraints(maxWidth: 300, maxHeight: 80),
                 child: TextField(
                   controller: NameTextController,
-                  style: TextStyle(fontSize: 40),
-                  decoration: InputDecoration(
+                  style: const TextStyle(fontSize: 40),
+                  decoration: const InputDecoration(
                     hintText: 'Nom',
                     border: OutlineInputBorder(),
                   ),
@@ -55,7 +55,6 @@ class _ConnexionState extends State<Connexion> {
               ElevatedButton(
                 onPressed: () {
                   DatabaseHelper.instance.queryAllRows().then((value) {
-                    print(value);
                     Navigator.push(
                       context,
                         MaterialPageRoute(builder: (context) => PageCercle(name: NameTextController.text))                    );

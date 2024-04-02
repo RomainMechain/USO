@@ -18,8 +18,7 @@ class _RegleState extends State<Regle> {
           toolbarHeight: 100,
           title: const Padding(
             padding: EdgeInsets.only(
-                top:
-                    50), // Ajustez cette valeur pour changer la position du titre
+                top: 50),
             child: Text(
               "USO",
               style: TextStyle(
