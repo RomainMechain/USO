@@ -32,19 +32,20 @@ class _ConnexionState extends State<Connexion> {
             children: [
               const Text(
                 "Veuillez choisir votre nom !",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: 34,
+                  fontSize: 32,
                 ),
               ),
               const SizedBox(height: 80),
               ConstrainedBox(
                 constraints:
-                const BoxConstraints(maxWidth: 300, maxHeight: 100),
+                const BoxConstraints(maxWidth: 300, maxHeight: 80),
                 child: TextField(
                   controller: NameTextController,
-                  style: TextStyle(fontSize: 40),
-                  decoration: InputDecoration(
+                  style: const TextStyle(fontSize: 40),
+                  decoration: const InputDecoration(
                     hintText: 'Nom',
                     border: OutlineInputBorder(),
                   ),
@@ -53,15 +54,7 @@ class _ConnexionState extends State<Connexion> {
               const SizedBox(height: 80),
               ElevatedButton(
                 onPressed: () {
-                  // ajoute le nom dans la base de données
-                  // print toute les entrées de la base de données
-                  //DatabaseHelper.instance.insert({
-                    //"nom": NameTextController.text,
-                    //"score": 0,
-                    //"niveau": "0"
-                  //});
                   DatabaseHelper.instance.queryAllRows().then((value) {
-                    print(value);
                     Navigator.push(
                       context,
                         MaterialPageRoute(builder: (context) => PageCercle(name: NameTextController.text))                    );

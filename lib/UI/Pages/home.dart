@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 100,
-        title: Center(
+        title: const Center(
           child: Text("USO!",
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -34,8 +34,7 @@ class _HomeState extends State<Home> {
               width: 300,
               height: 300,
             ),
-            SizedBox(height: 20),
-            SizedBox(height: 20),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -44,11 +43,11 @@ class _HomeState extends State<Home> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
               ),
-              child: Text('Jouer !', style: TextStyle(fontSize: 18),),
+              child: const Text('Jouer !', style: TextStyle(fontSize: 18),),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -57,11 +56,11 @@ class _HomeState extends State<Home> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
               ),
-              child: Text('Voir le score', style: TextStyle(fontSize: 18),),
+              child: const Text('Voir le score', style: TextStyle(fontSize: 18),),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -70,9 +69,9 @@ class _HomeState extends State<Home> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 22, horizontal: 50),
+                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 50),
               ),
-              child: Text('Consulter les règles', style: TextStyle(fontSize: 18),),
+              child: const Text('Consulter les règles', style: TextStyle(fontSize: 18),),
             ),
           ],
         ),
