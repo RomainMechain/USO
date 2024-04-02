@@ -49,8 +49,8 @@ class _CercleWidgetState extends State<CercleWidget> {
   int _scoreAAtteindre = 100;
   final _audioPlayer = AudioPlayer();
   var ListeMusique = [
-    "Musique/2-jours.mp3",
-    "Musique/5-isomnie.mp3",
+    "Musique/2-jour.mp3",
+    "Musique/5-insomnie.mp3",
     "Musique/6-demain.mp3",
     "Musique/couleurV1.mp3",
     "Musique/Rêves plein la tête V2.mp3",
@@ -58,17 +58,30 @@ class _CercleWidgetState extends State<CercleWidget> {
     "Musique/Tour du monde V3.mp3",
     "Musique/vide v2 V2.mp3",
   ];
+  int musicIndex = 0;
 
   @override
   void initState() {
     super.initState();
     randomisation = random.nextInt(100) + 30;
+    _audioPlayer.stop() ;
+
+
+  }
+  void playMusic() {
+    String musique = ListeMusique[random.nextInt(ListeMusique.length)];
+    _audioPlayer.play(AssetSource(musique));
+    _audioPlayer.resume();
   }
 
 
 
   void startTimer() {
-    _audioPlayer.play(ListeMusique[0] as Source);
+    if( musicIndex==4 ||musicIndex==0){
+      _audioPlayer.stop() ;
+      playMusic();
+      musicIndex=0;
+    }
     _timer = Timer.periodic(
       Duration(seconds: 1),
           (Timer timer) {
@@ -161,6 +174,8 @@ class _CercleWidgetState extends State<CercleWidget> {
                 _gameStarted = false;
                 _score = 0;
                 _scorefinal = 0;
+                niveau = 0;
+                musicIndex = 0;
                 Navigator.of(context).pop(); // Ferme le dialog
                 setState(() {}); // Force le widget à se reconstruire
               },
@@ -197,9 +212,11 @@ class _CercleWidgetState extends State<CercleWidget> {
 
   // Affiche un AlertDialog "Vous avez gagné !" personnalisé
   void _WinGameOverDialog() {
+    musicIndex ++;
     showDialog(
       context: context,
       barrierDismissible: false,
+
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text(
