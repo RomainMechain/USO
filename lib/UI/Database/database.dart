@@ -45,4 +45,9 @@ class DatabaseHelper {
     Database? db = await instance.database;
     return await db!.query("SCORE");
   }
+  Future<void> resetDatabase() async {
+    Database? db = await instance.database;
+    await db!.execute('DROP TABLE IF EXISTS SCORE');
+    await _onCreate(db, 1);
+  }
 }
