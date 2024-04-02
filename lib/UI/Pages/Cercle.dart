@@ -3,6 +3,10 @@ import 'dart:math';
 import '../Database/database.dart';
 import 'package:flutter/material.dart';
 import 'score.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+
 
 
 
@@ -43,6 +47,17 @@ class _CercleWidgetState extends State<CercleWidget> {
   int _score = 0;
   int _scorefinal = 0;
   int _scoreAAtteindre = 100;
+  final _audioPlayer = AudioPlayer();
+  var ListeMusique = [
+    "Musique/2-jours.mp3",
+    "Musique/5-isomnie.mp3",
+    "Musique/6-demain.mp3",
+    "Musique/couleurV1.mp3",
+    "Musique/Rêves plein la tête V2.mp3",
+    "Musique/toujours plus hautV1.mp3",
+    "Musique/Tour du monde V3.mp3",
+    "Musique/vide v2 V2.mp3",
+  ];
 
   @override
   void initState() {
@@ -50,7 +65,10 @@ class _CercleWidgetState extends State<CercleWidget> {
     randomisation = random.nextInt(100) + 30;
   }
 
+
+
   void startTimer() {
+    _audioPlayer.play(ListeMusique[0] as Source);
     _timer = Timer.periodic(
       Duration(seconds: 1),
           (Timer timer) {
@@ -117,6 +135,7 @@ class _CercleWidgetState extends State<CercleWidget> {
 
   // Affiche un AlertDialog "Game Over" personnalisé
   void _showGameOverDialog() {
+    _audioPlayer.stop();
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -210,6 +229,7 @@ class _CercleWidgetState extends State<CercleWidget> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -271,4 +291,5 @@ class _CercleWidgetState extends State<CercleWidget> {
       ),
     );
   }
+
 }
