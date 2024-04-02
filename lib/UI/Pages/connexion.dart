@@ -53,13 +53,6 @@ class _ConnexionState extends State<Connexion> {
               const SizedBox(height: 80),
               ElevatedButton(
                 onPressed: () {
-                  // ajoute le nom dans la base de données
-                  // print toute les entrées de la base de données
-                  //DatabaseHelper.instance.insert({
-                    //"nom": NameTextController.text,
-                    //"score": 0,
-                    //"niveau": "0"
-                  //});
                   DatabaseHelper.instance.queryAllRows().then((value) {
                     print(value);
                     Navigator.push(

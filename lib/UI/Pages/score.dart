@@ -45,13 +45,15 @@ class _scoreState extends State<score> {
                   future: DatabaseHelper.instance.queryAllRows(),
                   builder: (BuildContext context, AsyncSnapshot<List<Map>> snapshot) {
                     if (snapshot.hasData) {
+                      var sortedData = List<Map>.from(snapshot.data ?? []);
+                      sortedData.sort((a, b) => b['score'].compareTo(a['score']));
                       return DataTable(
                         columns: const [
                           DataColumn(label: Text('Nom')),
                           DataColumn(label: Text('Score')),
                           DataColumn(label: Text('Niveau')),
                         ],
-                        rows: snapshot.data!.map((row) => DataRow(cells: [
+                        rows: sortedData.map((row) => DataRow(cells: [
                           DataCell(Text(row['nom'].toString())),
                           DataCell(Text(row['score'].toString())),
                           DataCell(Text(row['niveau'].toString())),
