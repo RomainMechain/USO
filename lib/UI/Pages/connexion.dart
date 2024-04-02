@@ -32,15 +32,16 @@ class _ConnexionState extends State<Connexion> {
             children: [
               const Text(
                 "Veuillez choisir votre nom !",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: 34,
+                  fontSize: 32,
                 ),
               ),
               const SizedBox(height: 80),
               ConstrainedBox(
                 constraints:
-                const BoxConstraints(maxWidth: 300, maxHeight: 100),
+                const BoxConstraints(maxWidth: 300, maxHeight: 80),
                 child: TextField(
                   controller: NameTextController,
                   style: TextStyle(fontSize: 40),
