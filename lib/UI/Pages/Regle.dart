@@ -91,7 +91,7 @@ class _RegleState extends State<Regle> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: const Text(
-                  "- Timer : Le timer, le joueur doit avoir cliqué sur un certain nombre de cercles avant la fin du timer pour passer au niveau suivant.",
+                  "- Timer : Le timer de 30 secondes, le joueur doit faire un certain score avant la fin du timer pour passer au niveau suivant.",
                   style: TextStyle(
                     fontSize: 16,
                   ),
@@ -103,7 +103,7 @@ class _RegleState extends State<Regle> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: const Text(
-                  "- Score : Le score, il augmente à chaque fois que vous cliquez sur un cercle et le nombre de points obtenus augmente lui aussi en fonction des niveaux.",
+                  "- Score : Le score, il augmente à chaque fois que vous cliquez sur un cercle et le nombre de points obtenus varie celon la taille des cercles.",
                   style: TextStyle(
                     fontSize: 16,
                   ),
@@ -115,7 +115,7 @@ class _RegleState extends State<Regle> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: const Text(
-                  "- Les niveaux : Les niveaux permettent d'augmenter la difficulté en diminuant le timer et en augmentant la vitesse d'apparition des cercles.",
+                  "- Les niveaux : Les niveaux permettent d'augmenter la difficulté en augmantant le score a atteindre en 30 secondes.",
                   style: TextStyle(
                     fontSize: 16,
                   ),

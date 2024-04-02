@@ -33,6 +33,8 @@ dependencies:
   google_fonts: 6.1.0
   http: 1.2.0
   sqflite: 2.0.0+3
+  audioplayers: ^5.2.1
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -56,7 +58,9 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - assets/Musique/
     - Images/
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
