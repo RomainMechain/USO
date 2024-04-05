@@ -1,16 +1,17 @@
-# tp_mobile
+# TP noté mobile
 
-A new Flutter project.
+Dans ce TP, nous avons choisi de réaliser un jeu ayant pour objectif de cliquer le plus rapidement possible sur 
+des cercles en un temps imparti. Cela permetant de calculer un score enregistré dans une base de données.
 
-## Getting Started
+## Arborecence du projet :
 
-This project is a starting point for a Flutter application.
+- main.dart : fichier principal de l'application
+- UI/ : contient les fichier permettant le fonctionnement de l'application
+- UI/Database/ : contient les fichiers permettant la gestion de la base de données
+- UI/Pages/ : contient les fichiers permettant la gestion des différentes pages de l'application
+- assets/Musique : contient les fichiers audio de l'application
 
-A few resources to get you started if this is your first Flutter project:
+## Réalisé par : 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Debray Antoine
+- Mechain Romain
